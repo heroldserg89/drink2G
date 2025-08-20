@@ -1,0 +1,125 @@
+@use "../module.scss";
+
+.advantages {
+  text-align: center;
+  padding-block: 50px 60px;
+
+  @include module.grid-md-block {
+    padding-block: 57px 100px;
+  }
+
+  @include module.grid-lg-block {
+    padding-block: 100px 104px;
+  }
+}
+
+.advantages__heading {
+  margin-bottom: 20px;
+
+  @include module.grid-md-block {
+    margin-bottom: 44px;
+  }
+
+  @include module.grid-lg-block {
+    margin-bottom: 60px;
+  }
+}
+
+.advantages__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @include module.grid-md-block {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 30px;
+    padding-inline: 10px;
+    text-align: left;
+  }
+
+  @include module.grid-lg-block {
+    text-align: center;
+    grid-template-columns: repeat(4, 1fr);
+    padding-inline: 0;
+  }
+}
+
+.advantages__item {
+  position: relative;
+  padding-block: 16px;
+
+  @include module.grid-md-block {
+    padding-left: 72px;
+  }
+
+  @include module.grid-lg-block {
+    padding-left: 0;
+  }
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 52px;
+    height: 56px;
+    margin-bottom: 6px;
+
+    @include module.grid-md-block {
+      position: absolute;
+      left: 0;
+      top: 20px;
+    }
+
+    @include module.grid-lg-block {
+      position: static;
+      margin-bottom: 17px;
+    }
+  }
+
+  &--clock {
+    &::before {
+      background-image: url("./../../icons/clock.svg");
+    }
+  }
+
+  &--pocket {
+    &::before {
+      background-image: url("./../../icons/pocket.svg");
+    }
+  }
+
+  &--lightning {
+    &::before {
+      background-image: url("./../../icons/lightning.svg");
+    }
+  }
+
+  &--leaf {
+    &::before {
+      background-image: url("./../../icons/leaf.svg");
+    }
+  }
+}
+
+.advantages__title {
+  font-size: 18px;
+  line-height: 178%;
+  margin-block: 0 4px;
+
+  @include module.grid-md-block {
+    font-size: 24px;
+    line-height: 150%;
+    margin-bottom: 10px;
+  }
+}
+
+.advantages__desc {
+  margin-block: 0;
+  font-size: 14px;
+  line-height: 143%;
+
+  @include module.grid-md-block {
+    font-size: 16px;
+    line-height: 150%;
+  }
+}

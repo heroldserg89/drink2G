@@ -1,0 +1,67 @@
+@use "../module.scss";
+
+.nav-site {
+  list-style: none;
+  margin-block: 0;
+  padding: 0;
+  background-color: module.$var-base-white;
+  text-align: center;
+  border-top: 1px solid module.$var-base-secondary;
+
+  @include module.grid-md-block {
+    display: flex;
+    border-top: none;
+    flex-wrap: wrap;
+  }
+
+  @include module.grid-lg-block {
+    gap: 20px;
+  }
+}
+
+.nav-site__link {
+  position: relative;
+  display: block;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: inherit;
+  text-decoration: none;
+  padding: 20px;
+  border-bottom: 1px solid module.$var-base-secondary;
+
+  &:focus-visible {
+    outline: none;
+    color: module.$var-base-primary;
+  }
+
+  @include module.grid-hover {
+    color: module.$var-base-primary;
+  }
+
+  &:active {
+    background-color: module.$var-base-secondary;
+
+    @include module.grid-lg-block {
+      color: module.$var-base-primary;
+    }
+  }
+
+  @include module.grid-md-block {
+    border-bottom: 3px solid transparent;
+    padding-block: 32px 29px;
+  }
+
+  &--active {
+    @include module.grid-md-block {
+      color: module.$var-base-primary;
+      border-bottom-color: currentColor;
+    }
+
+    &:focus-visible {
+      outline: 1px solid currentColor;
+    }
+  }
+}

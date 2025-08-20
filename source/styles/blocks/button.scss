@@ -1,0 +1,13 @@
+@use "../module.scss";
+
+.button {
+  font-family: inherit;
+  margin: 0;
+  border: none;
+  font-size: 16px;
+  line-height: 150%;
+  border-radius: 4px;
+  padding: 8px 20px;
+  color: module.$var-base-white;
+  background-color: module.$var-base-primary;
+}

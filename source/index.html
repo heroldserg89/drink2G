@@ -1,17 +1,437 @@
 <!DOCTYPE html>
-<html class="page" lang="ru">
-  <head>
-    <meta charset="UTF-8">
-    <title>Название проекта</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="preload" href="#" type="font/woff2" as="font">
-    <link rel="stylesheet" href="styles/styles.css">
-    <script src="scripts/index.js" defer></script>
-  </head>
-  <body class="page__body">
-    <header class="header">Шапка</header>
-    <main>
-      <h1>Страница для старта</h1>
-    </main>
-  </body>
+<html
+  class="page"
+  lang="ru"
+>
+<head>
+  <meta charset="UTF-8">
+  <title>Название проекта</title>
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  >
+  <link
+    rel="icon"
+    href="favicon.ico"
+    type="image/x-icon"
+  >
+  <link
+    rel="icon"
+    href="favicons/icon.svg"
+    type="image/svg+xml"
+  >
+  <link
+    rel="apple-touch-icon"
+    href="favicons/apple.png"
+  >
+  <link
+    rel="manifest"
+    href="manifest.webmanifest"
+  >
+  <link
+    rel="preload"
+    href="fonts/Montserrat-Regular.woff2"
+    type="font/woff2"
+    as="font"
+    crossorigin="anonymous"
+  >
+  <link
+    rel="preload"
+    href="fonts/Montserrat-Medium.woff2"
+    type="font/woff2"
+    as="font"
+    crossorigin="anonymous"
+  >
+  <link
+    rel="preload"
+    href="fonts/Montserrat-SemiBold.woff2"
+    type="font/woff2"
+    as="font"
+    crossorigin="anonymous"
+  >
+  <link
+    rel="preload"
+    href="fonts/Montserrat-Bold.woff2"
+    type="font/woff2"
+    as="font"
+    crossorigin="anonymous"
+  >
+  <link
+    rel="preload"
+    href="fonts/Montserrat-ExtraBold.woff2"
+    type="font/woff2"
+    as="font"
+    crossorigin="anonymous"
+  >
+  <link
+    rel="stylesheet"
+    href="styles/styles.css"
+  >
+  <script
+    src="scripts/index.js"
+    defer
+  ></script>
+</head>
+<body class="page__body">
+<header class="header">
+  <nav class="header__nav container">
+    <a
+      class="header__logo logo"
+      href="/"
+    >
+      <picture>
+        <source
+          media="(min-width: 1440px)"
+          srcset="./images/logo-big.svg"
+          width="170"
+          height="36"
+          type="image/svg+xml"
+        >
+        <source
+          media="(min-width: 768px)"
+          srcset="./images/logo-medium.svg"
+          width="82"
+          height="36"
+          type="image/svg+xml"
+        >
+        <img
+          class="logo__img"
+          src="./images/logo.svg"
+          width="32"
+          height="36"
+          alt="Лого"
+        >
+      </picture>
+    </a>
+    <h1
+      class="header__title"
+    >
+      Интернет-магазин кофейных напитков
+    </h1>
+    <div class="header__nav-block">
+      <ul class="header__nav-site nav-site">
+        <li class="nav-site__item">
+          <a
+            class="nav-site__link nav-site__link--active"
+            href="#"
+          >
+            Главная
+          </a>
+        </li>
+        <li class="nav-site__item">
+          <a
+            class="nav-site__link"
+            href="#"
+          >
+            Каталог
+          </a>
+        </li>
+        <li class="nav-site__item">
+          <a
+            class="nav-site__link"
+            href="#"
+          >
+            Доставка
+          </a>
+        </li>
+        <li class="nav-site__item">
+          <a
+            class="nav-site__link"
+            href="#"
+          >
+            О нас
+          </a>
+        </li>
+      </ul>
+    </div>
+    <ul class="header__nav-user nav-user">
+      <li class="nav-user__item">
+        <a
+          class="nav-user__link nav-user__link--user"
+          href="#"
+          aria-label="Войти"
+        >
+          <span class="nav-user__text">Войти</span>
+        </a>
+      </li>
+      <li class="nav-user__item">
+        <a
+          class="nav-user__link nav-user__link--cart"
+          href="#"
+          aria-label="Корзина"
+        >
+          <span class="nav-user__text">Корзина</span>
+        </a>
+      </li>
+      <li class="nav-user__item nav-user__item--hidden-md">
+        <button
+          class="nav-user__button burger"
+          type="button"
+        >
+          <span class="burger__line"></span>
+          <span class="visually-hidden">Открыть меню</span>
+        </button>
+      </li>
+    </ul>
+
+  </nav>
+</header>
+<main>
+  <section class="slider">
+    <h2 class="slider__title visually-hidden">
+      Новинки наших напитков
+    </h2>
+    <ul class="slider__list">
+      <li class="slider__item product">
+        <picture class="product__img-wrapper">
+          <source
+            media="(min-width:1440px)"
+            srcset="./images/product/flat-white-img-desktop@1x.webp 1x, ./images/product/flat-white-img-desktop@2x.webp 2x"
+            type="image/webp"
+            width="600"
+            height="600"
+          >
+          <source
+            media="(min-width:1440px)"
+            srcset="./images/product/flat-white-img-desktop@1x.png 1x, ./images/product/flat-white-img-desktop@2x.png 2x"
+            type="image/png"
+            width="600"
+            height="600"
+          >
+          <source
+            media="(min-width:768px)"
+            srcset="./images/product/flat-white-img-tablet@1x.webp 1x, ./images/product/flat-white-img-tablet@2x.webp 2x"
+            type="image/webp"
+            width="476"
+            height="476"
+          >
+          <source
+            media="(min-width:768px)"
+            srcset="./images/product/flat-white-img-tablet@1x.png 1x, ./images/product/flat-white-img-tablet@2x.png 2x"
+            type="image/png"
+            width="476"
+            height="476"
+          >
+          <source
+            srcset="./images/product/flat-white-img@1x.webp 1x, ./images/product/flat-white-img@2x.webp 2x"
+            width="280"
+            height="280"
+            type="image/webp"
+          >
+          <img
+            class="product__img"
+            src="./images/product/flat-white-img@1x.png"
+            srcset="./images/product/flat-white-img@2x.png 2x"
+            alt="Фото напитка Декаф Флэт Уайт"
+            width="280"
+            height="280"
+          >
+        </picture>
+        <div class="product__info">
+          <div class="product__title heading heading--big">
+            <p class="heading__badge">Новинка!</p>
+            <h3 class="heading__title">Декаф Флэт Уайт</h3>
+          </div>
+          <p class="product__desc">
+            Свежесваренный кофе без кофеина из Эфиопии с натуральным фермерским молоком — то, что нужно для расслабления после тяжёлого рабочего дня
+          </p>
+          <div class="product__actions">
+            <p class="product__price">
+              <del class="product__price-old">295₽</del>
+              <ins class="product__price">225₽</ins>
+            </p>
+            <a
+              class="product__button button"
+              href="#"
+            >Заказать
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="slider__item product">
+        <picture class="product__img-wrapper">
+          <source
+            media="(min-width:1440px)"
+            srcset="./images/product/lavender-img-desktop@1x.webp 1x, ./images/product/lavender-img-desktop@2x.webp 2x"
+            type="image/webp"
+            width="600"
+            height="600"
+          >
+          <source
+            media="(min-width:1440px)"
+            srcset="./images/product/lavender-img-desktop@1x.png 1x, ./images/product/lavender-img-desktop@2x.png 2x"
+            type="image/png"
+            width="600"
+            height="600"
+          >
+          <source
+            media="(min-width:768px)"
+            srcset="./images/product/lavender-img-tablet@1x.webp 1x, ./images/product/lavender-img-tablet@2x.webp 2x"
+            type="image/webp"
+            width="476"
+            height="476"
+          >
+          <source
+            media="(min-width:768px)"
+            srcset="./images/product/lavender-img-tablet@1x.png 1x, ./images/product/lavender-img-tablet@2x.png 2x"
+            type="image/png"
+            width="476"
+            height="476"
+          >
+          <source
+            srcset="./images/product/lavender-img@1x.webp 1x, ./images/product/lavender-img@2x.webp 2x"
+            width="280"
+            height="280"
+            type="image/webp"
+          >
+          <img
+            class="product__img"
+            src="./images/product/lavender-img@1x.png"
+            srcset="./images/product/lavender-img@2x.png 2x"
+            alt="Фото напитка Декаф Флэт Уайт"
+            width="280"
+            height="280"
+          >
+        </picture>
+        <div class="product__info">
+          <div class="product__title heading heading--big">
+            <p class="heading__badge">Новинка!</p>
+            <h3 class="heading__title">Лавандовый Латте</h3>
+          </div>
+          <p class="product__desc">
+            Невероятное сочетание перуанской высокогорной арабики с молоком ламы и лавандовым сиропом унесёт вас прямо на вершину Радужных гор
+          </p>
+          <div class="product__actions">
+            <p class="product__price">
+              <del class="product__price-old">295₽</del>
+              <ins class="product__price">225₽</ins>
+            </p>
+            <a
+              class="product__button button"
+              href="#"
+            >Заказать
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="slider__item product">
+        <picture class="product__img-wrapper">
+          <source
+            media="(min-width:1440px)"
+            srcset="./images/product/espresso-img-desktop@1x.webp 1x, ./images/product/espresso-img-desktop@2x.webp 2x"
+            type="image/webp"
+            width="600"
+            height="600"
+          >
+          <source
+            media="(min-width:1440px)"
+            srcset="./images/product/espresso-img-desktop@1x.png 1x, ./images/product/espresso-img-desktop@2x.png 2x"
+            type="image/png"
+            width="600"
+            height="600"
+          >
+          <source
+            media="(min-width:768px)"
+            srcset="./images/product/espresso-img-tablet@1x.webp 1x, ./images/product/espresso-img-tablet@2x.webp 2x"
+            type="image/webp"
+            width="476"
+            height="476"
+          >
+          <source
+            media="(min-width:768px)"
+            srcset="./images/product/espresso-img-tablet@1x.png 1x, ./images/product/espresso-img-tablet@2x.png 2x"
+            type="image/png"
+            width="476"
+            height="476"
+          >
+          <source
+            srcset="./images/product/espresso-img@1x.webp 1x, ./images/product/espresso-img@2x.webp 2x"
+            width="280"
+            height="280"
+            type="image/webp"
+          >
+          <img
+            class="product__img"
+            src="./images/product/espresso-img@1x.png"
+            srcset="./images/product/espresso-img@2x.png 2x"
+            alt="Фото напитка Декаф Флэт Уайт"
+            width="280"
+            height="280"
+          >
+        </picture>
+        <div class="product__info">
+          <div class="product__title heading heading--big">
+            <p class="heading__badge">Новинка!</p>
+            <h3 class="heading__title">Тройной Эспрессо</h3>
+          </div>
+          <p class="product__desc">
+            Мощнее укола адреналина, чернее самой тёмной ночи, этот тройной эспрессо из Колумбии покажет вам, что такое настоящая бодрость
+          </p>
+          <div class="product__actions">
+            <p class="product__price">
+              <del class="product__price-old">295₽</del>
+              <ins class="product__price">225₽</ins>
+            </p>
+            <a
+              class="product__button button"
+              href="#"
+            >Заказать
+            </a>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="slider__dots"></div>
+    <button
+      class="slider__button slider__button--prev"
+      type="button"
+    >
+      <span class="visually-hidden">Предыдущий продукт</span>
+    </button>
+    <button
+      class="slider__button slider__button--next"
+      type="button"
+    >
+      <span class="visually-hidden">Следующий продукт</span>
+    </button>
+  </section>
+  <section class="advantages">
+    <div class="advantages__wrapper container">
+      <div class="advantages__heading heading">
+        <p class="heading__badge">Преимущества</p>
+        <h2 class="heading__title">Главные причины выбрать Drink2Go</h2>
+      </div>
+      <ul class="advantages__list">
+        <li class="advantages__item advantages__item--clock">
+          <h3 class="advantages__title">Скорость</h3>
+          <p class="advantages__desc">Готовый напиток всегда под рукой — просто открой банку</p>
+        </li>
+        <li class="advantages__item advantages__item--pocket">
+          <h3 class="advantages__title">Удобство</h3>
+          <p class="advantages__desc">Легко помещается и в карман, и в маленькую сумочку</p>
+        </li>
+        <li class="advantages__item advantages__item--lightning">
+          <h3 class="advantages__title">Бодрость</h3>
+          <p class="advantages__desc">Сбалансированная доза кофеина даст мощный заряд энергии</p>
+        </li>
+        <li class="advantages__item advantages__item--leaf">
+          <h3 class="advantages__title">Экологичность</h3>
+          <p class="advantages__desc">Вся упаковка сделана из перерабатываемых материалов</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section
+    class="catalog"
+    style="background-color: #F8F8F8"
+  >
+    <div class="catalog__wrapper container">
+      <div class="catalog__heading heading">
+        <p class="heading__badge">Каталог</p>
+        <h2 class="heading__title">Каталог кофейных напитков</h2>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
 </html>
