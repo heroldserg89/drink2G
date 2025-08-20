@@ -15,6 +15,7 @@ for (let i = 0; i < slideCount; i++) {
   dotChildElement.innerHTML = `Слайд ${i + 1}`;
   dot.appendChild(dotChildElement);
   dot.classList.add('slider__dot');
+  dot.type = 'button';
   dot.title = `Слайд ${i + 1}`;
   dot.dataset.index = i;
   paginationContainer.appendChild(dot);
@@ -66,4 +67,3 @@ paginationContainer.addEventListener('click', (evt) => {
 
 // Инициализация слайдера при загрузке страницы
 updateSlider();
-

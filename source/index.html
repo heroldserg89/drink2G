@@ -76,8 +76,8 @@
 <header class="header">
   <nav class="header__nav container">
     <a
-      href="/"
       class="header__logo logo"
+      href="/"
     >
       <picture>
         <source
@@ -85,12 +85,14 @@
           srcset="./images/logo-big.svg"
           width="170"
           height="36"
+          type="image/svg+xml"
         >
         <source
           media="(min-width: 768px)"
           srcset="./images/logo-medium.svg"
           width="82"
           height="36"
+          type="image/svg+xml"
         >
         <img
           class="logo__img"
@@ -103,7 +105,6 @@
     </a>
     <h1
       class="header__title"
-      aria-label="Интернет-магазин кофейных напитков"
     >
       Интернет-магазин кофейных напитков
     </h1>
@@ -215,6 +216,7 @@
             srcset="./images/product/flat-white-img@1x.webp 1x, ./images/product/flat-white-img@2x.webp 2x"
             width="280"
             height="280"
+            type="image/webp"
           >
           <img
             class="product__img"
@@ -238,7 +240,11 @@
               <del class="product__price-old">295₽</del>
               <ins class="product__price">225₽</ins>
             </p>
-            <button class="product__button button">Заказать</button>
+            <a
+              class="product__button button"
+              href="#"
+            >Заказать
+            </a>
           </div>
         </div>
       </li>
@@ -276,6 +282,7 @@
             srcset="./images/product/lavender-img@1x.webp 1x, ./images/product/lavender-img@2x.webp 2x"
             width="280"
             height="280"
+            type="image/webp"
           >
           <img
             class="product__img"
@@ -299,7 +306,11 @@
               <del class="product__price-old">295₽</del>
               <ins class="product__price">225₽</ins>
             </p>
-            <button class="product__button button">Заказать</button>
+            <a
+              class="product__button button"
+              href="#"
+            >Заказать
+            </a>
           </div>
         </div>
       </li>
@@ -337,6 +348,7 @@
             srcset="./images/product/espresso-img@1x.webp 1x, ./images/product/espresso-img@2x.webp 2x"
             width="280"
             height="280"
+            type="image/webp"
           >
           <img
             class="product__img"
@@ -360,16 +372,26 @@
               <del class="product__price-old">295₽</del>
               <ins class="product__price">225₽</ins>
             </p>
-            <button class="product__button button">Заказать</button>
+            <a
+              class="product__button button"
+              href="#"
+            >Заказать
+            </a>
           </div>
         </div>
       </li>
     </ul>
     <div class="slider__dots"></div>
-    <button class="slider__button slider__button--prev">
+    <button
+      class="slider__button slider__button--prev"
+      type="button"
+    >
       <span class="visually-hidden">Предыдущий продукт</span>
     </button>
-    <button class="slider__button slider__button--next">
+    <button
+      class="slider__button slider__button--next"
+      type="button"
+    >
       <span class="visually-hidden">Следующий продукт</span>
     </button>
   </section>

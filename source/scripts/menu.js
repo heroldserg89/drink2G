@@ -5,4 +5,3 @@ burger.addEventListener('click', () => {
   headerNavBlock.classList.toggle('header__nav-block--open');
   burger.classList.toggle('burger--active');
 });
-
