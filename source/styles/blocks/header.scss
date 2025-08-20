@@ -43,6 +43,7 @@
   transition-property: grid-template-rows, visibility, opacity;
   visibility: hidden;
   opacity: 0;
+  z-index: 10;
 
   &--open {
     visibility: visible;
