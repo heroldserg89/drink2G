@@ -1,5 +1,77 @@
+@use "../module.scss";
+
 .header {
-  background-color: #663399;
-  color: #ffffff;
-  padding: 10px 15px;
+  position: relative;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__logo {
+  flex-shrink: 0;
+}
+
+.header__title {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  margin-block: 0;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+
+  @include module.grid-lg-block {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.header__nav-block {
+  position: absolute;
+  display: grid;
+  grid-template-rows: 0fr;
+  top: 100%;
+  inset-inline: 0;
+  width: 100%;
+  overflow: hidden;
+  transition: 0.2s ease-in-out;
+  transition-property: grid-template-rows, visibility, opacity;
+  visibility: hidden;
+  opacity: 0;
+
+  &--open {
+    visibility: visible;
+    opacity: 1;
+    grid-template-rows: 1fr;
+  }
+
+  @include module.grid-md-block {
+    justify-content: center;
+    position: relative;
+    grid-template-rows: 1fr;
+    visibility: visible;
+    opacity: 1;
+    margin-left: 5px;
+  }
+
+  @include module.grid-lg-block {
+    margin-left: 0;
+  }
+}
+
+.header__nav-site {
+  min-height: 0;
+}
+
+.header__nav-user {
+  margin-right: -#{module.$var-padding-container};
+
+  @include module.grid-md-block {
+    margin-right: 0;
+  }
 }

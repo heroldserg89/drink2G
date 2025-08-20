@@ -1,1 +1,23 @@
-/* здесь используйте глобальные переменные */
+// Container
+$max-width-container: 1440px;
+$padding-container: 20px;
+$padding-container-desktop: 40px;
+
+// Colors
+$base-primary: #7859cf;
+$base-secondary: #f0ebff;
+$base-grey: #bdbdbd;
+$base-black: #333333;
+$base-white: #ffffff;
+$alt-primary-lighter: #9070ec;
+$alt-primary-darker: #593cac;
+$alt-primary-opacity: rgba(120, 89, 207, 0.25);
+$alt-light-grey: #e2e2e2;
+$bg-lightest-grey: #f8f8f8;
+$bg-flat-white: #f3ebe1;
+$bg-lavender-latte: #eae6fc;
+$bg-espresso: #e5e6e8;
+
+
+// Animation
+$transition-duration: 0.3s;

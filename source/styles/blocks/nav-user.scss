@@ -1,0 +1,92 @@
+@use "../module.scss";
+
+.nav-user {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin-block: 0;
+  padding: 0;
+
+  @include module.grid-lg-block {
+    gap: 20px;
+  }
+}
+
+.nav-user__item {
+  &--hidden-md {
+    @include module.grid-md-block {
+      display: none;
+    }
+  }
+}
+
+.nav-user__link {
+  position: relative;
+  display: flex;
+  padding: 22px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  column-gap: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition-property: color, background-color;
+  transition-duration: module.$var-transition-duration;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+  }
+
+  &--user::before {
+    mask-image: url("./../../icons/user.svg");
+    background-color: currentColor;
+  }
+
+  &--cart::before {
+    mask-image: url("./../../icons/cart.svg");
+    background-color: currentColor;
+  }
+
+  @include module.grid-md-block {
+    padding-block: 32px;
+  }
+
+  @include module.grid-lg-block {
+    padding-inline: 20px;
+  }
+
+  &:focus-visible {
+    outline: none;
+    color: module.$var-base-primary;
+  }
+
+  @include module.grid-hover {
+    color: module.$var-base-primary;
+  }
+
+  &:active {
+    background-color: module.$var-base-secondary;
+
+    @include module.grid-lg-block {
+      color: module.$var-base-primary;
+    }
+  }
+}
+
+.nav-user__text {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+
+  @include module.grid-lg-block {
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
