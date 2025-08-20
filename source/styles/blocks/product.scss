@@ -43,28 +43,13 @@
   }
 }
 
-.product__badge {
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: module.$var-base-primary;
-  margin-block: 0 4px;
-}
-
 .product__title {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 133%;
-  letter-spacing: 0.02em;
-  margin-block: 0 10px;
+  margin-bottom: 10px;
 
   @include module.grid-md-block {
     margin-bottom: 16px;
-    font-size: 56px;
-    line-height: 143%;
   }
+
 }
 
 .product__desc {

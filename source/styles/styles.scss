@@ -5,10 +5,12 @@
 @import "./common/utils.scss";
 
 /* BLOCKS */
+@import "./blocks/heading.scss";
+@import "./blocks/button.scss";
 @import "./blocks/header.scss";
 @import "./blocks/burger.scss";
 @import "./blocks/nav-user.scss";
 @import "./blocks/nav-site.scss";
 @import "./blocks/slider.scss";
 @import "./blocks/product.scss";
-@import "./blocks/button.scss";
+@import "./blocks/advantages.scss";
