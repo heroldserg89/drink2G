@@ -3,14 +3,14 @@
 .slider {
   position: relative;
   overflow: hidden;
-  background-image: linear-gradient(0deg, module.$var-bg-flat-white 100%, module.$var-base-white 0%);
+  background-image: linear-gradient(180deg, module.$var-bg-flat-white 100%, module.$var-base-white 0%);
 
   @include module.grid-md-block {
     background-image: linear-gradient(180deg, module.$var-bg-flat-white 640px, module.$var-base-white 640px);
   }
 
   @include module.grid-lg-block {
-    background-image: linear-gradient(0deg, module.$var-bg-flat-white 100%, module.$var-base-white 0%);
+    background-image: linear-gradient(180deg, module.$var-bg-flat-white 100%, module.$var-base-white 0%);
   }
 }
 
