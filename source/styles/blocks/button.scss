@@ -10,4 +10,11 @@
   padding: 8px 20px;
   color: module.$var-base-white;
   background-color: module.$var-base-primary;
+  cursor: pointer;
+  text-decoration: none;
+
+  &--clear {
+    color: module.$var-base-primary;
+    background-color: module.$var-base-white;
+  }
 }

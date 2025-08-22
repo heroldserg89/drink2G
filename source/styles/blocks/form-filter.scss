@@ -1,0 +1,44 @@
+.form-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.form-filter__block {
+  border: none;
+  padding: 0;
+}
+
+.form-filter__price {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 44px;
+}
+
+.form-filter__title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.form-filter__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.form-filter__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-filter__slider {
+  margin-bottom: 24px;
+}
+

@@ -1,0 +1,45 @@
+@use "../module.scss";
+
+.noUi-horizontal {
+  height: auto;
+  border: none;
+  box-shadow: none;
+  background-color: module.$var-alt-light-grey;
+}
+
+.noUi-base {
+  height: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.noUi-connects {
+  border-radius: 0;
+  height: 4px;
+}
+
+.noUi-connect {
+  background-color: module.$var-alt-primary-lighter;
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 24px;
+  height: 24px;
+  top: -10px;
+}
+
+.noUi-handle {
+  border-radius: 50%;
+  border: 2px solid module.$var-alt-primary-lighter;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::after {
+    display: none;
+  }
+
+  &::before {
+    position: static;
+  }
+}

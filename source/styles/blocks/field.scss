@@ -1,0 +1,23 @@
+@use "../module.scss";
+
+.field__input {
+  font-family: inherit;
+  width: 100%;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  border-radius: 4px;
+  padding: 8px 10px;
+  border: 2px solid module.$var-alt-primary-lighter;
+
+  &:focus-visible {
+    border-color: module.$var-alt-primary-darker;
+    outline: none;
+  }
+
+  &:disabled {
+    color: module.$var-base-grey;
+    border-color: currentColor;
+  }
+}
