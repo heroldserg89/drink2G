@@ -1,6 +1,7 @@
 @use "../module.scss";
 
 .slider {
+  min-height: 656px;
   position: relative;
   overflow: hidden;
   background-image: linear-gradient(180deg, module.$var-bg-flat-white 100%, module.$var-base-white 0%);
@@ -73,7 +74,7 @@
     position: absolute;
     display: flex;
     column-gap: 8px;
-    bottom: 64px;
+    bottom: 60px;
     left: 50%;
     translate: -50% 0;
   }

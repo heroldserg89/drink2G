@@ -187,7 +187,7 @@
       Новинки наших напитков
     </h2>
     <ul class="slider__list">
-      <li class="slider__item product">
+      <li class="slider__item product product--big">
         <picture class="product__img-wrapper">
           <source
             media="(min-width:1440px)"
@@ -243,7 +243,7 @@
           <div class="product__actions">
             <p class="product__price">
               <del class="product__price-old">295₽</del>
-              <ins class="product__price">225₽</ins>
+              <ins class="product__price-current">225₽</ins>
             </p>
             <a
               class="product__button button"
@@ -253,7 +253,7 @@
           </div>
         </div>
       </li>
-      <li class="slider__item product">
+      <li class="slider__item product product--big">
         <picture class="product__img-wrapper">
           <source
             media="(min-width:1440px)"
@@ -293,7 +293,7 @@
             class="product__img"
             src="./images/product/lavender-img@1x.png"
             srcset="./images/product/lavender-img@2x.png 2x"
-            alt="Фото напитка Декаф Флэт Уайт"
+            alt="Фото напитка Лавандовый Латте"
             width="280"
             height="280"
           >
@@ -309,7 +309,7 @@
           <div class="product__actions">
             <p class="product__price">
               <del class="product__price-old">295₽</del>
-              <ins class="product__price">225₽</ins>
+              <ins class="product__price-current">225₽</ins>
             </p>
             <a
               class="product__button button"
@@ -319,7 +319,7 @@
           </div>
         </div>
       </li>
-      <li class="slider__item product">
+      <li class="slider__item product product--big">
         <picture class="product__img-wrapper">
           <source
             media="(min-width:1440px)"
@@ -359,7 +359,7 @@
             class="product__img"
             src="./images/product/espresso-img@1x.png"
             srcset="./images/product/espresso-img@2x.png 2x"
-            alt="Фото напитка Декаф Флэт Уайт"
+            alt="Фото напитка Тройной Эспрессо"
             width="280"
             height="280"
           >
@@ -375,7 +375,7 @@
           <div class="product__actions">
             <p class="product__price">
               <del class="product__price-old">295₽</del>
-              <ins class="product__price">225₽</ins>
+              <ins class="product__price-current">225₽</ins>
             </p>
             <a
               class="product__button button"
@@ -432,166 +432,222 @@
         <p class="heading__badge">Каталог</p>
         <h2 class="heading__title">Каталог кофейных напитков</h2>
       </div>
-      <section class="catalog__filter">
-        <h3 class="visually-hidden">Фильтр</h3>
-        <form
-          class="catalog__form-filter form-filter"
-          action=" https://echo.htmlacademy.ru"
-          method="GET"
-        >
-          <fieldset class="form-filter__block">
-            <legend class="form-filter__title">Цена</legend>
-            <div class="form-filter__slider"></div>
-            <div class="form-filter__price">
-              <label class="form-filter__field field">
-                <span class="field__text visually-hidden">Минимальная цена</span>
-                <input
-                  class="field__input"
-                  type="text"
-                  name="min-price"
-                  value="0"
-                >
-              </label>
-              <label class="form-filter__field field">
-                <span class="field__text visually-hidden">Максимальная цена</span>
-                <input
-                  class="field__input"
-                  type="text"
-                  name="max-price"
-                  value="900"
-                >
-              </label>
+      <div class="catalog__inner">
+        <section class="catalog__filter">
+          <h3 class="visually-hidden">Фильтр</h3>
+          <form
+            class="catalog__form-filter form-filter"
+            action=" https://echo.htmlacademy.ru"
+            method="GET"
+            autocomplete="off"
+          >
+            <fieldset class="form-filter__block">
+              <legend class="form-filter__title">Цена</legend>
+              <div class="form-filter__price-slider">
+                <div class="form-filter__slider"></div>
+              </div>
+              <div class="form-filter__price">
+                <label class="form-filter__field field">
+                  <span class="field__text visually-hidden">Минимальная цена</span>
+                  <input
+                    class="field__input"
+                    type="text"
+                    name="min-price"
+                    value="0"
+                  >
+                </label>
+                <label class="form-filter__field field">
+                  <span class="field__text visually-hidden">Максимальная цена</span>
+                  <input
+                    class="field__input"
+                    type="text"
+                    name="max-price"
+                    value="900"
+                  >
+                </label>
+              </div>
+            </fieldset>
+            <fieldset class="form-filter__block">
+              <legend class="form-filter__title">Наличие молока</legend>
+              <ul class="form-filter__list">
+                <li class="form-filter__list-item">
+                  <label class="form-filter__radio field-check">
+                    <input
+                      class="field-check__input field-check__input--radio"
+                      type="radio"
+                      name="milk"
+                      value="any"
+                      checked
+                    >
+                    <span class="field-check__text">Неважно</span>
+                  </label>
+                </li>
+                <li class="form-filter__list-item">
+                  <label class="form-filter__radio field-check">
+                    <input
+                      class="field-check__input field-check__input--radio"
+                      type="radio"
+                      name="milk"
+                      value="only-animal"
+                    >
+                    <span class="field-check__text">Только животное</span>
+                  </label>
+                </li>
+                <li class="form-filter__list-item">
+                  <label class="form-filter__radio field-check">
+                    <input
+                      class="field-check__input field-check__input--radio"
+                      type="radio"
+                      name="milk"
+                      value="vegan"
+                    >
+                    <span class="field-check__text">Только растительное</span>
+                  </label>
+                </li>
+                <li class="form-filter__list-item">
+                  <label class="form-filter__radio field-check">
+                    <input
+                      class="field-check__input field-check__input--radio"
+                      type="radio"
+                      name="milk"
+                      value="none"
+                      disabled
+                    >
+                    <span class="field-check__text">Без молока</span>
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset class="form-filter__block">
+              <legend class="form-filter__title">Страна произрастания</legend>
+              <ul class="form-filter__list">
+                <li class="form-filter__list-item">
+                  <label class="form-filter__checkbox field-check">
+                    <input
+                      class="field-check__input field-check__input--checkbox"
+                      type="checkbox"
+                      name="country"
+                      value="brazil"
+                      checked
+                    >
+                    <span class="field-check__text">Бразилия</span>
+                  </label>
+                </li>
+                <li class="form-filter__list-item">
+                  <label class="form-filter__checkbox field-check">
+                    <input
+                      class="field-check__input field-check__input--checkbox"
+                      type="checkbox"
+                      name="country"
+                      value="ethiopia"
+                    >
+                    <span class="field-check__text">Эфиопия</span>
+                  </label>
+                </li>
+                <li class="form-filter__list-item">
+                  <label class="form-filter__checkbox field-check">
+                    <input
+                      class="field-check__input field-check__input--checkbox"
+                      type="checkbox"
+                      name="country"
+                      value="colombia"
+                    >
+                    <span class="field-check__text">Колумбия</span>
+                  </label>
+                </li>
+                <li class="form-filter__list-item">
+                  <label class="form-filter__checkbox field-check">
+                    <input
+                      class="field-check__input field-check__input--checkbox"
+                      type="checkbox"
+                      name="country"
+                      value="costa-rica"
+                    >
+                    <span class="field-check__text">Коста-Рика</span>
+                  </label>
+                </li>
+                <li class="form-filter__list-item">
+                  <label class="form-filter__checkbox field-check">
+                    <input
+                      class="field-check__input field-check__input--checkbox"
+                      type="checkbox"
+                      name="country"
+                      value="none"
+                      disabled
+                    >
+                    <span class="field-check__text">Перу</span>
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+            <div class="form-filter__buttons">
+              <button
+                class="form-filter__button button"
+                type="submit"
+              >
+                Применить
+              </button>
+              <button
+                class="form-filter__button button button--clear"
+                type="reset"
+              >
+                Сбросить
+              </button>
             </div>
-          </fieldset>
-          <fieldset class="form-filter__block">
-            <legend class="form-filter__title">Наличие молока</legend>
-            <ul class="form-filter__list">
-              <li class="form-filter__list-item">
-                <label class="form-filter__radio field-check">
-                  <input
-                    class="field-check__input field-check__input--radio"
-                    type="radio"
-                    name="milk"
-                    value="any"
-                    checked
-                  >
-                  <span class="field-check__text">Неважно</span>
-                </label>
-              </li>
-              <li class="form-filter__list-item">
-                <label class="form-filter__radio field-check">
-                  <input
-                    class="field-check__input field-check__input--radio"
-                    type="radio"
-                    name="milk"
-                    value="only-animal"
-                  >
-                  <span class="field-check__text">Только животное</span>
-                </label>
-              </li>
-              <li class="form-filter__list-item">
-                <label class="form-filter__radio field-check">
-                  <input
-                    class="field-check__input field-check__input--radio"
-                    type="radio"
-                    name="milk"
-                    value="vegan"
-                  >
-                  <span class="field-check__text">Только растительное</span>
-                </label>
-              </li>
-              <li class="form-filter__list-item">
-                <label class="form-filter__radio field-check">
-                  <input
-                    class="field-check__input field-check__input--radio"
-                    type="radio"
-                    name="milk"
-                    value="none"
-                    disabled
-                  >
-                  <span class="field-check__text">Без молока</span>
-                </label>
-              </li>
-            </ul>
-          </fieldset>
-          <fieldset class="form-filter__block">
-            <legend class="form-filter__title">Страна произрастания</legend>
-            <ul class="form-filter__list">
-              <li class="form-filter__list-item">
-                <label class="form-filter__checkbox field-check">
-                  <input
-                    class="field-check__input field-check__input--checkbox"
-                    type="checkbox"
-                    name="country"
-                    value="brazil"
-                    checked
-                  >
-                  <span class="field-check__text">Бразилия</span>
-                </label>
-              </li>
-              <li class="form-filter__list-item">
-                <label class="form-filter__checkbox field-check">
-                  <input
-                    class="field-check__input field-check__input--checkbox"
-                    type="checkbox"
-                    name="country"
-                    value="ethiopia"
-                  >
-                  <span class="field-check__text">Эфиопия</span>
-                </label>
-              </li>
-              <li class="form-filter__list-item">
-                <label class="form-filter__checkbox field-check">
-                  <input
-                    class="field-check__input field-check__input--checkbox"
-                    type="checkbox"
-                    name="country"
-                    value="colombia"
-                  >
-                  <span class="field-check__text">Колумбия</span>
-                </label>
-              </li>
-              <li class="form-filter__list-item">
-                <label class="form-filter__checkbox field-check">
-                  <input
-                    class="field-check__input field-check__input--checkbox"
-                    type="checkbox"
-                    name="country"
-                    value="costa-rica"
-                  >
-                  <span class="field-check__text">Коста-Рика</span>
-                </label>
-              </li>
-              <li class="form-filter__list-item">
-                <label class="form-filter__checkbox field-check">
-                  <input
-                    class="field-check__input field-check__input--checkbox"
-                    type="checkbox"
-                    name="country"
-                    value="none"
-                    disabled
-                  >
-                  <span class="field-check__text">Перу</span>
-                </label>
-              </li>
-            </ul>
-          </fieldset>
-          <div class="form-filter__buttons">
-            <button
-              class="form-filter__button button"
-              type="submit"
+          </form>
+        </section>
+        <div class="catalog__list-wrapper">
+          <label
+            class="catalog__sort"
+          >
+            <span class="catalog__sort">Сортировка:</span>
+            <select
+              class="catalog__sort-select"
+              name="sort"
             >
-              Применить
-            </button>
-            <button
-              class="form-filter__button button button--clear"
-              type="reset"
-            >
-              Сбросить
-            </button>
-          </div>
-        </form>
-      </section>
+              <option value="default">по умолчанию</option>
+            </select>
+          </label>
+          <ul class="catalog__list">
+            <li class="catalog__item product">
+              <picture class="product__img-wrapper">
+                <source
+                  srcset="./images/product/coffee-can-1@1x.webp 1x, ./images/product/coffee-can-1@2x.webp 2x"
+                  width="130"
+                  height="188"
+                  type="image/webp"
+                >
+                <img
+                  class="product__img"
+                  src="./images/product/coffee-can-1@1x.png"
+                  srcset="./images/product/coffee-can-1@2x.png 2x"
+                  alt="Фото напитка Декаф Флэт Уайт"
+                  width="130"
+                  height="188"
+                >
+              </picture>
+              <div class="product__info">
+                <div class="product__title heading heading--small">
+                  <h3 class="heading__title">Декаф Флэт Уайт</h3>
+                </div>
+                <p class="product__desc">
+                  Кофе без кофеина из Эфиопии с натуральным фермерским молоком
+                </p>
+                <div class="product__actions">
+                  <p class="product__price">
+                    <span class="product__price-current">225₽</span>
+                  </p>
+                  <a
+                    class="product__button button"
+                    href="#"
+                  >Заказать
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 </main>
