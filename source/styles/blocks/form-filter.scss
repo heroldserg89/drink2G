@@ -1,9 +1,10 @@
-@use "../module.scss";
+@use "../module";
 
 .form-filter {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  padding-bottom: 40px;
 
   @include module.grid-md-block {
     display: grid;

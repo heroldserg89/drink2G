@@ -1,24 +1,24 @@
-@use "../module.scss";
+@use "../module";
 
 .catalog {
   background-color: #f8f8f8;
-  padding-top: 50px;
+  padding-block: 50px 42px;
 
   @include module.grid-md-block {
-    padding-top: 80px;
+    padding-block: 80px 90px;
   }
 
   @include module.grid-lg-block {
-    padding-top: 105px;
+    padding-block: 100px 120px;
   }
 }
 
 .catalog__heading {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 
   @include module.grid-lg-block {
-    margin-bottom: 40px;
+    margin-bottom: 35px;
   }
 }
 
@@ -30,14 +30,81 @@
   }
 }
 
-.catalog__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.catalog__form-filter {
+  padding-top: 5px;
+}
 
+.catalog__list-wrapper {
   @include module.grid-lg-block {
     grid-column: 3 span;
-    display: grid;
+  }
+}
+
+.catalog__sort {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  gap: 10px;
+
+  @include module.grid-md-block {
+    justify-content: end;
+    margin-bottom: 25px;
+  }
+}
+
+.catalog__sort-title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.catalog__sort-select {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: module.$var-base-primary;
+  padding: 4px 30px 4px 10px;
+  border: none;
+  background-color: transparent;
+  appearance: none;
+  background-image: url("../../icons/arrow-bottom.svg");
+  background-size: 10px 10px;
+  background-repeat: no-repeat;
+  background-position: top 10px right 8px;
+  cursor: pointer;
+  font-family: inherit;
+  transition-property: background-color;
+  transition-duration: module.$var-transition-duration;
+
+  @include module.grid-hover {
+    background-color: module.$var-base-secondary;
+  }
+
+  &:focus-visible {
+    background-color: module.$var-base-secondary;
+  }
+
+  &:active {
+    background-image: url("../../icons/arrow-top.svg");
+  }
+}
+
+.catalog__list {
+  list-style: none;
+  margin-block: 0 40px;
+  padding: 0;
+  display: grid;
+  gap: 20px;
+
+  @include module.grid-md-block {
+    margin-bottom: 70px;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include module.grid-lg-block {
     grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 60px;
   }
 }

@@ -1,0 +1,93 @@
+@use "../module";
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+
+  @include module.grid-md-block {
+    justify-content: end;
+  }
+}
+
+.pagination__item {
+  &--current + .pagination__item--next {
+    display: none;
+  }
+
+  &:has(+ .pagination__item--current) .pagination__link--prev {
+    display: none;
+  }
+}
+
+.pagination__link {
+  font-size: 16px;
+  line-height: 150%;
+  color: module.$var-base-primary;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  min-width: 40px;
+  height: 40px;
+  padding: 8px;
+  background-color: module.$var-base-white;
+  transition-property: color, background-color;
+  transition-duration: module.$var-transition-duration;
+
+  &--current {
+    font-weight: 600;
+    background-color: transparent;
+    color: module.$var-base-black;
+    pointer-events: none;
+  }
+
+  &--prev,
+  &--next {
+    font-size: 0;
+
+    @include module.grid-md-block {
+      padding-inline: 20px;
+      font-size: 16px;
+    }
+  }
+
+  &--prev::before,
+  &--next::before {
+    content: "";
+    background-color: currentColor;
+    width: 10px;
+    height: 10px;
+
+    @include module.grid-md-block {
+      display: none;
+    }
+  }
+
+  &--prev::before {
+    mask-image: url("./../../icons/arrow-left.svg");
+  }
+
+  &--next::before {
+    mask-image: url("./../../icons/arrow-right.svg");
+  }
+
+  @include module.grid-hover {
+    color: module.$var-base-white;
+    background-color: module.$var-alt-primary-lighter;
+  }
+
+  &:focus-visible {
+    color: module.$var-base-white;
+    background-color: module.$var-alt-primary-lighter;
+  }
+
+  &:active {
+    color: module.$var-alt-primary-darker;
+  }
+}

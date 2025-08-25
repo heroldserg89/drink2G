@@ -1,11 +1,11 @@
-@use "../module.scss";
+@use "../module";
 
 .advantages {
   text-align: center;
   padding-block: 50px 45px;
 
   @include module.grid-md-block {
-    padding-block: 57px 83px;
+    padding-block: 51px 83px;
   }
 
   @include module.grid-lg-block {
@@ -72,7 +72,7 @@
 
     @include module.grid-lg-block {
       position: static;
-      margin-bottom: 17px;
+      margin-bottom: 20px;
     }
   }
 

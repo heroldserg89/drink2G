@@ -1,4 +1,4 @@
-@use "../module.scss";
+@use "../module";
 
 .nav-user {
   display: flex;
@@ -6,9 +6,12 @@
   align-items: center;
   margin-block: 0;
   padding: 0;
+  flex-wrap: wrap;
 
   @include module.grid-lg-block {
     gap: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
   }
 }
 
@@ -40,6 +43,7 @@
     display: block;
     width: 16px;
     height: 16px;
+    flex-shrink: 0;
   }
 
   &--user::before {

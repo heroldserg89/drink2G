@@ -1,0 +1,23 @@
+@use "../module";
+
+.map {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+
+  @include module.grid-md-block {
+    height: 480px;
+  }
+
+  @include module.grid-lg-block {
+    height: 540px;
+  }
+}
+
+.map__img {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}

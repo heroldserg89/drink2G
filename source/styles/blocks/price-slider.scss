@@ -1,4 +1,4 @@
-@use "../module.scss";
+@use "../module";
 
 .no-ui-horizontal {
   display: flex;
@@ -42,25 +42,29 @@
   cursor: pointer;
 
   &::after,
-  &::before{
+  &::before {
     display: none;
   }
+
   @include module.grid-hover {
     & .no-ui-touch-area {
       background-color: module.$var-alt-primary-opacity;
     }
   }
+
   &:focus {
     & .no-ui-touch-area {
       background-color: module.$var-alt-primary-opacity;
     }
   }
+
   &:active {
     & .no-ui-touch-area {
       background-color: module.$var-base-primary;
     }
   }
 }
+
 .no-ui-touch-area {
   width: 16px;
   height: 16px;

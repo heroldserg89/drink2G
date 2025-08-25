@@ -1,0 +1,227 @@
+@use "../module";
+
+.footer {
+  @include module.grid-md-block {
+    padding-top: 25px;
+  }
+}
+
+.footer__wrapper {
+  @include module.grid-md-block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+  }
+
+  @include module.grid-lg-block {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.footer__block {
+  position: relative;
+  padding-block: 20px;
+
+  @include module.grid-md-block {
+    padding-block: 15px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    width: calc(100% + 40px);
+    display: block;
+    height: 1px;
+    background-color: module.$var-base-secondary;
+
+    @include module.grid-md-block {
+      display: none;
+    }
+  }
+}
+
+.footer__links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include module.grid-md-block {
+    grid-column: -1/1;
+    padding-bottom: 10px;
+  }
+
+  @include module.grid-lg-block {
+    grid-column: auto;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+  }
+}
+
+.footer__slogan {
+  display: none;
+  font-size: 14px;
+  line-height: 143%;
+  margin-block: 7px 50px;
+
+  @include module.grid-lg-block {
+    display: block;
+  }
+}
+
+.footer__title {
+  margin-block: 0 12px;
+  font-size: 14px;
+  line-height: 143%;
+  letter-spacing: 0.02em;
+  color: module.$var-base-primary;
+
+  @include module.grid-lg-block {
+    margin-top: 10px;
+  }
+}
+
+.footer__logo {
+  @include module.grid-lg-block {
+    margin-bottom: 3px;
+  }
+}
+
+.footer__list {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__list-link {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 133%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding-block: 8px;
+  transition-property: color;
+  transition-duration: module.$var-transition-duration;
+
+  @include module.grid-hover {
+    color: module.$var-alt-primary-lighter;
+  }
+
+  &:focus-visible {
+    color: module.$var-alt-primary-lighter;
+  }
+
+  &:active {
+    color: module.$var-alt-primary-darker;
+  }
+}
+
+.footer__contacts {
+  font-size: 14px;
+  line-height: 143%;
+}
+
+.footer__contracts-item {
+  position: relative;
+  display: block;
+  font-style: normal;
+  padding-left: 20px;
+  color: inherit;
+  text-decoration: none;
+  line-height: 143%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 13px;
+    height: 16px;
+    background-color: module.$var-base-primary;
+  }
+
+  &--address {
+    margin-bottom: 15px;
+    padding-top: 10px;
+
+    &::before {
+      mask-image: url("../../icons/address.svg");
+    }
+  }
+
+  &--phone {
+    transition-property: color;
+    transition-duration: module.$var-transition-duration;
+
+    &::before {
+      mask-image: url("../../icons/phone.svg");
+    }
+
+    @include module.grid-hover {
+      color: module.$var-alt-primary-lighter;
+    }
+
+    &:focus-visible {
+      color: module.$var-alt-primary-lighter;
+    }
+
+    &:active {
+      color: module.$var-alt-primary-darker;
+    }
+  }
+}
+
+.footer__copyright {
+  margin: 0;
+  padding-block: 20px 30px;
+  color: module.$var-base-grey;
+  font-size: 12px;
+  line-height: 133%;
+  text-align: center;
+  transition-property: color;
+  transition-duration: module.$var-transition-duration;
+
+  @include module.grid-md-block {
+    grid-column: -1/1;
+    padding-top: 15px;
+  }
+
+  @include module.grid-lg-block {
+    padding-top: 5px;
+  }
+}
+
+.footer__copyright-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-flex;
+  margin-left: 4px;
+
+  &::after {
+    background-color: currentColor;
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 16px;
+    mask-image: url("../../icons/academy-logo.svg");
+    margin-left: 4px;
+  }
+
+  @include module.grid-hover {
+    color: module.$var-alt-primary-lighter;
+  }
+
+  &:focus-visible {
+    color: module.$var-alt-primary-lighter;
+  }
+
+  &:active {
+    color: module.$var-alt-primary-darker;
+  }
+}

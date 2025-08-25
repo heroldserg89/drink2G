@@ -1,4 +1,4 @@
-@use "../module.scss";
+@use "../module";
 
 .nav-site {
   list-style: none;
@@ -31,9 +31,18 @@
   text-decoration: none;
   padding: 20px;
   border-bottom: 1px solid module.$var-base-secondary;
+  transition-property: background-color, color;
+  transition-duration: module.$var-transition-duration;
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 3px;
+    display: block;
+    inset: auto 0 0;
+  }
 
   &:focus-visible {
-    outline: none;
     color: module.$var-base-primary;
   }
 
@@ -50,18 +59,23 @@
   }
 
   @include module.grid-md-block {
-    border-bottom: 3px solid transparent;
-    padding-block: 32px 29px;
+    padding-block: 32px;
+    border: none;
   }
+}
 
-  &--active {
-    @include module.grid-md-block {
-      color: module.$var-base-primary;
-      border-bottom-color: currentColor;
+.nav-site__link--active {
+  @include module.grid-md-block {
+    color: module.$var-base-primary;
+
+    &::before {
+      background-color: currentColor;
     }
 
-    &:focus-visible {
-      outline: 1px solid currentColor;
+    @include module.grid-hover {
+      &::before {
+        height: 5px;
+      }
     }
   }
 }

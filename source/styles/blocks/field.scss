@@ -1,4 +1,4 @@
-@use "../module.scss";
+@use "../module";
 
 .field__input {
   font-family: inherit;
@@ -10,6 +10,10 @@
   border-radius: 4px;
   padding: 6px 10px;
   border: 2px solid module.$var-alt-primary-lighter;
+
+  &::placeholder {
+    color: module.$var-base-grey;
+  }
 
   &:focus-visible {
     border-color: module.$var-alt-primary-darker;
