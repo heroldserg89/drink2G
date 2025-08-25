@@ -1,1 +1,0 @@
-var e=document.querySelector(".burger"),c=document.querySelector(".header__nav-block");e.addEventListener("click",()=>{c.classList.toggle("header__nav-block--open"),e.classList.toggle("burger--active")});
