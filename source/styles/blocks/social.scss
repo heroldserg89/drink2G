@@ -1,0 +1,74 @@
+@use "../module";
+
+.social-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.social-list__link {
+  color: module.$var-base-grey;
+  display: block;
+  padding: 10px;
+  border-radius: 4px;
+  transition-property: color, background-color;
+  transition-duration: module.$var-transition-duration;
+
+  &::before {
+    display: block;
+    content: "";
+    width: 20px;
+    height: 20px;
+    transition-property: color, background-color;
+    transition-duration: module.$var-transition-duration;
+  }
+
+  &--vk::before {
+    background-color: currentColor;
+    mask-image: url("../../icons/vk.svg");
+  }
+
+  &--pinteres::before {
+    background-color: currentColor;
+    mask-image: url("../../icons/vk.svg");
+  }
+
+  &--pinterest::before {
+    width: 22px;
+    height: 22px;
+    background-color: currentColor;
+    mask-image: url("../../icons/pinterest.svg");
+  }
+
+  &--ok::before {
+    background-color: currentColor;
+    mask-image: url("../../icons/ok.svg");
+  }
+
+  @include module.grid-hover {
+    background-color: module.$var-base-secondary;
+
+    &::before {
+      background-color: module.$var-base-primary;
+    }
+  }
+
+  &:focus-visible {
+    background-color: module.$var-base-secondary;
+
+    &::before {
+      background-color: module.$var-base-primary;
+    }
+  }
+
+  &:active {
+    background-color: module.$var-alt-primary-opacity;
+
+    &::before {
+      background-color: module.$var-base-primary;
+    }
+  }
+}

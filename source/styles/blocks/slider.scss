@@ -1,16 +1,17 @@
-@use "../module.scss";
+@use "../module";
 
 .slider {
+  min-height: 656px;
   position: relative;
   overflow: hidden;
-  background-image: linear-gradient(0deg, module.$var-bg-flat-white 100%, module.$var-base-white 0%);
+  background-image: linear-gradient(180deg, module.$var-bg-flat-white 100%, module.$var-base-white 0%);
 
   @include module.grid-md-block {
     background-image: linear-gradient(180deg, module.$var-bg-flat-white 640px, module.$var-base-white 640px);
   }
 
   @include module.grid-lg-block {
-    background-image: linear-gradient(0deg, module.$var-bg-flat-white 100%, module.$var-base-white 0%);
+    background-image: linear-gradient(180deg, module.$var-bg-flat-white 100%, module.$var-base-white 0%);
   }
 }
 
@@ -46,7 +47,6 @@
   &::before {
     display: block;
     content: "";
-    mask-image: url("./../../icons/arrow.svg");
     background-color: currentColor;
     width: 20px;
     height: 20px;
@@ -58,11 +58,39 @@
 
   &--prev {
     left: 0;
+
+    &::before {
+      mask-image: url("./../../icons/arrow-left.svg");
+    }
+
+    @include module.grid-hover {
+      background-image: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    &:active {
+      background-image: linear-gradient(90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+    }
   }
 
   &--next {
     right: 0;
-    rotate: 180deg;
+
+    &::before {
+      mask-image: url("./../../icons/arrow-right.svg");
+    }
+
+    @include module.grid-hover {
+      background-image: linear-gradient(-90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    &:active {
+      background-image: linear-gradient(-90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+    }
+  }
+
+  &:disabled {
+    cursor: auto;
+    pointer-events: none;
   }
 }
 
@@ -73,7 +101,7 @@
     position: absolute;
     display: flex;
     column-gap: 8px;
-    bottom: 64px;
+    bottom: 60px;
     left: 50%;
     translate: -50% 0;
   }
@@ -99,5 +127,19 @@
     width: 100%;
     height: 4px;
     background-color: currentColor;
+    transition-property: color;
+    transition-duration: module.$var-transition-duration;
+  }
+
+  @include module.grid-hover {
+    color: module.$var-alt-primary-opacity;
+  }
+
+  &:focus-visible {
+    color: module.$var-alt-primary-opacity;
+  }
+
+  &:active {
+    color: module.$var-base-primary;
   }
 }

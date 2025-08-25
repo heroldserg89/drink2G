@@ -1,6 +1,9 @@
-@use "../module.scss";
+@use "../module";
 
 .button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   font-family: inherit;
   margin: 0;
   border: none;
@@ -10,4 +13,47 @@
   padding: 8px 20px;
   color: module.$var-base-white;
   background-color: module.$var-base-primary;
+  cursor: pointer;
+  text-decoration: none;
+  gap: 6px;
+  transition-property: color, background-color;
+  transition-duration: module.$var-transition-duration;
+
+  &--clear {
+    color: module.$var-base-primary;
+    background-color: module.$var-base-white;
+  }
+
+  &--size-sm {
+    font-size: 14px;
+    line-height: 143%;
+  }
+
+  &--cart {
+    &::before {
+      content: "";
+      mask-image: url("../../icons/cart-plus.svg");
+      background-color: currentColor;
+      width: 20px;
+      height: 16px;
+      display: block;
+    }
+  }
+
+  @include module.grid-hover {
+    color: module.$var-base-white;
+    background-color: module.$var-alt-primary-lighter;
+  }
+
+  &:active {
+    color: module.$var-base-white;
+    background-color: module.$var-alt-primary-darker;
+  }
+
+  &--disabled,
+  &:disabled {
+    color: module.$var-base-white;
+    background-color: module.$var-base-grey;
+    pointer-events: none;
+  }
 }

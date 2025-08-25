@@ -24,7 +24,7 @@ for (let i = 0; i < slideCount; i++) {
 const paginationDots = document.querySelectorAll('.slider__dot');
 
 // Функция для обновления состояния слайдера
-function updateSlider() {
+const updateSlider = () => {
   // Перемещение слайдов
   sliderWrapper.style.transform = `translateX(${-currentIndex * 100}%)`;
 
@@ -40,7 +40,7 @@ function updateSlider() {
       dot.classList.remove('slider__dot--active');
     }
   });
-}
+};
 
 // Обработчики событий для кнопок
 prevButton.addEventListener('click', () => {
