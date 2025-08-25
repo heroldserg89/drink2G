@@ -1,0 +1,73 @@
+@use "../module";
+
+.no-ui-horizontal {
+  display: flex;
+  justify-content: center;
+  height: auto;
+  border: none;
+  box-shadow: none;
+  background-color: module.$var-alt-light-grey;
+}
+
+.no-ui-base {
+  position: relative;
+  height: 2px;
+  display: flex;
+  align-items: center;
+  width: calc(100% - 24px);
+}
+
+.no-ui-connects {
+  border-radius: 0;
+  height: 4px;
+}
+
+.no-ui-connect {
+  background-color: module.$var-alt-primary-lighter;
+}
+
+.no-ui-horizontal .no-ui-handle {
+  width: 24px;
+  height: 24px;
+  top: -10px;
+  right: -12px;
+}
+
+.no-ui-handle {
+  border-radius: 50%;
+  border: 2px solid module.$var-alt-primary-lighter;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &::after,
+  &::before {
+    display: none;
+  }
+
+  @include module.grid-hover {
+    & .no-ui-touch-area {
+      background-color: module.$var-alt-primary-opacity;
+    }
+  }
+
+  &:focus {
+    & .no-ui-touch-area {
+      background-color: module.$var-alt-primary-opacity;
+    }
+  }
+
+  &:active {
+    & .no-ui-touch-area {
+      background-color: module.$var-base-primary;
+    }
+  }
+}
+
+.no-ui-touch-area {
+  width: 16px;
+  height: 16px;
+  background-color: module.$var-base-white;
+  border-radius: 50%;
+}

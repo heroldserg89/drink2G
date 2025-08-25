@@ -1,4 +1,4 @@
-@use "../module.scss";
+@use "../module";
 
 .header {
   position: relative;
@@ -28,6 +28,7 @@
     position: relative;
     opacity: 1;
     visibility: visible;
+    max-width: 130px;
   }
 }
 
@@ -58,6 +59,8 @@
     visibility: visible;
     opacity: 1;
     margin-left: 5px;
+    width: auto;
+    flex-grow: 1;
   }
 
   @include module.grid-lg-block {
@@ -69,10 +72,16 @@
   min-height: 0;
 }
 
+
 .header__nav-user {
   margin-right: -#{module.$var-padding-container};
 
   @include module.grid-md-block {
     margin-right: 0;
+  }
+
+  @include module.grid-lg-block {
+    display: grid;
+    grid-template-columns: auto auto;
   }
 }

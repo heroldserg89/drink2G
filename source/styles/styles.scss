@@ -1,16 +1,30 @@
+/* VENDORS */
+@import "./vendors";
+
 /* GLOBAL */
-@import "./common/variables.scss";
-@import "./common/global.scss";
-@import "./common/fonts.scss";
-@import "./common/utils.scss";
+@import "./common/variables";
+@import "./common/global";
+@import "./common/fonts";
+@import "./common/utils";
 
 /* BLOCKS */
-@import "./blocks/heading.scss";
-@import "./blocks/button.scss";
-@import "./blocks/header.scss";
-@import "./blocks/burger.scss";
-@import "./blocks/nav-user.scss";
-@import "./blocks/nav-site.scss";
-@import "./blocks/slider.scss";
-@import "./blocks/product.scss";
-@import "./blocks/advantages.scss";
+@import "./blocks/page";
+@import "./blocks/heading";
+@import "./blocks/button";
+@import "./blocks/header";
+@import "./blocks/logo";
+@import "./blocks/burger";
+@import "./blocks/nav-user";
+@import "./blocks/nav-site";
+@import "./blocks/slider";
+@import "./blocks/product";
+@import "./blocks/advantages";
+@import "./blocks/field-check";
+@import "./blocks/field";
+@import "./blocks/catalog";
+@import "./blocks/form-filter";
+@import "./blocks/price-slider";
+@import "./blocks/pagination";
+@import "./blocks/map";
+@import "./blocks/footer";
+@import "./blocks/social";

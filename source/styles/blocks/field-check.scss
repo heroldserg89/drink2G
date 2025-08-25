@@ -1,0 +1,110 @@
+@use "../module";
+
+.field-check {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 150%;
+
+  &:has(input:disabled) {
+    cursor: default;
+    color: module.$var-alt-light-grey;
+    pointer-events: none;
+  }
+}
+
+.field-check__input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  appearance: none;
+  height: 24px;
+  border-radius: 20px;
+  border: 2px solid currentColor;
+  color: module.$var-base-grey;
+  cursor: pointer;
+  margin: 0;
+
+  &::before {
+    display: block;
+    content: "";
+    border-radius: 50%;
+  }
+
+  &--checkbox {
+    width: 42px;
+    background-color: currentColor;
+    transition-property: color, transform;
+    transition-duration: module.$var-transition-duration;
+
+    @include module.grid-hover {
+      color: module.$var-alt-primary-opacity;
+      border-color: module.$var-base-primary;
+    }
+
+    &::before {
+      width: 20px;
+      height: 20px;
+      background-color: module.$var-base-white;
+      transform: translateX(-9px);
+    }
+
+    &:checked {
+      color: module.$var-base-primary;
+
+
+      &::before {
+        transform: translateX(9px);
+      }
+
+      @include module.grid-hover {
+        color: module.$var-alt-primary-opacity;
+        border-color: module.$var-base-primary;
+      }
+
+      &:disabled {
+        &::before {
+          background-color: module.$var-base-grey;
+        }
+      }
+    }
+  }
+
+  &--radio {
+    width: 24px;
+
+    &::before {
+      width: 16px;
+      height: 16px;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        &::before {
+          background-color: currentColor;
+        }
+      }
+    }
+
+    @include module.grid-hover {
+      color: module.$var-alt-primary-opacity;
+      border-color: module.$var-base-primary;
+    }
+
+    &:checked {
+      color: module.$var-base-primary;
+
+      &::before {
+        background-color: currentColor;
+      }
+    }
+  }
+
+  &:disabled {
+    color: module.$var-alt-light-grey;
+    pointer-events: none;
+  }
+}
